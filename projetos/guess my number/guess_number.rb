@@ -20,6 +20,13 @@ num_guesses = 0
 # Indicador se o jogador acertou ou não
 guessed_it = false
 
+until num_guesses == 10 || guessed_it
+  puts "You've got #{10 - num_guesses} left."
+  print 'Make a guess: '
+  guess = gets.to_i # Transforma a saída do console em integer
+  num_guesses += 1 # A cada etapa do loop o jogador usa uma tentativa
+end
+
 # Caso o jogador perca o jogo, retorna qual era o número
 puts "Sorry, #{name}... You ran out of tries. BTW my number was #{target}." unless guessed_it
 # Mesmo que: unless guessed_it; puts "Sorry, #{name}... You ran out of tries. BTW my number was #{target}."; end
