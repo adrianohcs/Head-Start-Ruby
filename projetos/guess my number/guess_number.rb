@@ -25,6 +25,15 @@ until num_guesses == 10 || guessed_it
   print 'Make a guess: '
   guess = gets.to_i # Transforma a saída do console em integer
   num_guesses += 1 # A cada etapa do loop o jogador usa uma tentativa
+
+  if guess > target
+    puts 'Your guess was too HIGH! Try again.'
+  elsif guess < target
+    puts 'Your guess was too LOW! Try again.'
+  elsif guess == target
+    puts "Good job, #{name}!"
+    puts "You got my number in #{num_guesses} guesses."
+  end
 end
 
 # Caso o jogador perca o jogo, retorna qual era o número
